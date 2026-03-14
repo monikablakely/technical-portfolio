@@ -92,36 +92,36 @@ header nav a {
 section h1 {
   text-align: center;
   font-size: var(--font-size-xl);
-  margin: 60px 0 40px;
+  margin: 40px 0 20px; /* Unified spacing */
   font-weight: 700;
 }
 
 /* === About Section === */
-.about-section {
+.about-container {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   max-width: 1100px;
   margin: 0 auto;
   gap: 50px;
-  padding: 120px 20px 60px;
+  padding: 60px 20px; /* consistent with Contact section */
 }
 
-.about-image-wrapper img {
+.about-image img {
   width: 400px;
   height: 400px;
   object-fit: cover;
   border-radius: var(--border-radius-circle);
 }
 
-.about-details {
+.about-text {
   max-width: 600px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.about-details p {
+.about-text p {
   font-size: var(--font-size-m);
   line-height: 1.6;
 }
@@ -129,8 +129,8 @@ section h1 {
 /* === Projects Section === */
 .projects-section {
   max-width: 1100px;
-  margin: 4rem auto;
-  padding: 0 2rem;
+  margin: 0 auto;
+  padding: 60px 20px; /* unified spacing */
 }
 
 .projects-grid {
@@ -190,7 +190,8 @@ section h1 {
 /* === Resume Section === */
 .resume-section {
   max-width: 90%;
-  margin: 4rem auto;
+  margin: 0 auto;
+  padding: 60px 20px; /* unified spacing */
   text-align: center;
 }
 
@@ -210,8 +211,8 @@ section h1 {
 /* === Contact Section === */
 .contact-section {
   max-width: 600px;
-  margin: 4rem auto;
-  padding: 0 20px;
+  margin: 0 auto;
+  padding: 60px 20px; /* same spacing as other sections */
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -274,12 +275,12 @@ footer {
 
 /* === Responsive Media Queries === */
 @media (max-width: 1024px) {
-  .about-section {
+  .about-container {
     flex-direction: column;
     align-items: center;
     gap: 40px;
   }
-  .about-image-wrapper img {
+  .about-image img {
     width: 250px;
     height: 250px;
   }
