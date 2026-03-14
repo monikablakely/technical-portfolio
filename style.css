@@ -31,7 +31,14 @@
 }
 
 /* === Body / Links === */
+html, body {
+  height: 100%;
+}
+
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background-color: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;
@@ -193,6 +200,7 @@ section h1 {
   margin: 0 auto;
   padding: 60px 20px; /* unified spacing */
   text-align: center;
+  flex: 1; /* allow page to grow and push footer down */
 }
 
 .resume-container iframe {
@@ -216,6 +224,7 @@ section h1 {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  flex: 1; /* allow page to grow and push footer down */
 }
 
 .contact-section form {
@@ -250,6 +259,7 @@ footer {
   padding: 1.5rem 2rem;
   font-family: 'Poppins', sans-serif;
   font-size: 0.9rem;
+  margin-top: auto; /* push footer down */
 }
 
 .footer-container {
