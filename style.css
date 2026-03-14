@@ -158,6 +158,46 @@ nav a {
   margin-bottom: 1rem;
 }
 
+/* Resume Section */
+.resume-section {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.resume-section h1 {
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.resume-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.resume-container iframe {
+  width: 612px;  /* standard US Letter width */
+  height: 792px; /* standard US Letter height */
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.updated-note {
+  font-size: 0.85rem;
+  color: #4b3621;
+  opacity: 0.7;
+}
+
+/* Contact Section */
+.contact-section {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 20px;
+}
+
 /* Footer */
 footer {
   background-color: #4b3621;
@@ -199,7 +239,7 @@ main {
   padding: 40px 20px;
 }
 
-/* Responsive */
+/* Responsive Styles */
 @media (max-width: 1024px) {
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -235,6 +275,11 @@ main {
 
   .footer-right {
     justify-content: center;
+  }
+
+  .resume-container iframe {
+    width: 100%;
+    height: auto;
   }
 }
 
