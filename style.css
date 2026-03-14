@@ -1,123 +1,136 @@
-/* ==============================
-   Variables
-   ============================== */
-:root {
-  --dark-brown: #3E2C2A;
-  --light-brown: #A67B5B;
-  --accent: #D9B382;
-  --bg-color: #FDF6F0;
-  --text-color: #4A3F35;
-  --white: #FFFFFF;
-}
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-/* ==============================
-   Global Styles
-   ============================== */
-body {
+/* === Global Styles === */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-  color: var(--text-color);
-  background-color: var(--bg-color);
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
+:root {
+  --bg-color: #f5efe6;       /* Page background */
+  --white-color: #ffffff;
+  --dark-brown: #4b3621;     /* Text and footer background */
+  --button-color: #4b3621;
+  --button-text-color: #f5efe6;
+  --hover-link-color: #3c7d6b; /* Seamoss blue/green */
+  --text-color: #4b3621;
+  --light-brown: #d9c7b0;
+
+  --font-size-s: 0.9rem;
+  --font-size-n: 1rem;
+  --font-size-m: 1.12rem;
+  --font-size-l: 1.5rem;
+  --font-size-xl: 2rem;
+
+  --border-radius-s: 8px;
+  --border-radius-m: 12px;
+  --border-radius-circle: 50%;
+}
+
+/* === Body / Links === */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
 }
 
 a {
   text-decoration: none;
-  color: inherit;
-}
-
-/* ==============================
-   Navigation Bar
-   ============================== */
-nav {
-  background-color: var(--bg-color);
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  font-weight: 600;
-}
-
-nav a {
-  color: var(--dark-brown);
+  color: var(--text-color);
   transition: color 0.3s ease;
 }
 
-nav a:hover {
-  color: var(--accent);
+a:hover {
+  color: var(--hover-link-color);
 }
 
-/* ==============================
-   Hero Section (Home Page)
-   ============================== */
-.hero {
-  background-color: var(--dark-brown);
-  color: var(--white);
-  text-align: center;
-  min-height: 80vh;
+button, .btn {
+  cursor: pointer;
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: var(--border-radius-m);
+  padding: 10px 26px;
+  font-size: var(--font-size-m);
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+button:hover, .btn:hover {
+  background-color: var(--hover-link-color);
+  color: var(--white-color);
+}
+
+/* === Header / Navbar === */
+header {
+  width: 100%;
+  background-color: var(--white-color);
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  padding: 15px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+header nav {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  padding: 0 2rem;
+  gap: 40px;
 }
 
-.hero h1 {
-  font-size: 3rem;
+header nav a {
+  font-weight: 600;
+  padding: 6px 10px;
+}
+
+/* === Section Titles === */
+section h1 {
+  text-align: center;
+  font-size: var(--font-size-xl);
+  margin: 60px 0 40px;
   font-weight: 700;
 }
 
-.hero .subtitle {
-  font-size: 1.2rem;
-  font-weight: 400;
+/* === About Section === */
+.about-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 50px;
+  padding: 120px 20px 60px;
 }
 
-.resume-btn {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border: 2px solid var(--white);
-  border-radius: 8px;
-  background-color: transparent;
-  color: var(--white);
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s ease forwards;
-  animation-delay: 0.1s;
+.about-image-wrapper img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: var(--border-radius-circle);
 }
 
-.resume-btn:hover {
-  background-color: var(--white);
-  color: var(--dark-brown);
+.about-details {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.about-details p {
+  font-size: var(--font-size-m);
+  line-height: 1.6;
 }
 
-/* ==============================
-   Projects Page
-   ============================== */
+/* === Projects Section === */
 .projects-section {
   max-width: 1100px;
   margin: 4rem auto;
   padding: 0 2rem;
-  color: var(--dark-brown);
-}
-
-.projects-section h1 {
-  text-align: center;
-  margin-bottom: 2rem;
 }
 
 .projects-grid {
@@ -127,30 +140,30 @@ nav a:hover {
 }
 
 .project-card {
-  background-color: var(--white);
+  background-color: var(--white-color);
   border: 2px solid var(--light-brown);
-  border-radius: 12px;
+  border-radius: var(--border-radius-m);
   padding: 1.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 .project-title {
-  font-size: 1.2rem;
+  font-size: var(--font-size-m);
   font-weight: 600;
   margin-bottom: 0.5rem;
   color: var(--dark-brown);
 }
 
 .project-description {
-  font-size: 0.95rem;
+  font-size: var(--font-size-n);
   color: var(--text-color);
   margin-bottom: 1rem;
 }
@@ -159,44 +172,32 @@ nav a:hover {
   align-self: flex-start;
   text-decoration: none;
   font-weight: 600;
-  color: var(--accent);
-  transition: color 0.2s ease;
+  color: var(--button-color);
 }
 
 .project-link:hover {
-  color: var(--dark-brown);
+  color: var(--hover-link-color);
 }
 
 .project-image {
   width: 100%;
-  aspect-ratio: 5 / 4;
+  aspect-ratio: 5/4;
   object-fit: cover;
-  border: 2px solid var(--light-brown);
-  border-radius: 12px;
+  border-radius: var(--border-radius-m);
   margin-bottom: 1rem;
 }
 
-/* ==============================
-   Resume Page
-   ============================== */
+/* === Resume Section === */
 .resume-section {
   max-width: 90%;
   margin: 4rem auto;
-  padding: 0;
   text-align: center;
-}
-
-.resume-section h1 {
-  margin-bottom: 2rem;
-  font-weight: 700;
 }
 
 .resume-container iframe {
   width: 612px;
   height: 792px;
   border: none;
-  background-color: transparent;
-  display: inline-block;
 }
 
 @media (max-width: 650px) {
@@ -206,81 +207,51 @@ nav a:hover {
   }
 }
 
-.updated-note {
-  font-size: 0.8rem;
-  color: var(--dark-brown);
-  margin-top: 1rem;
-  opacity: 0.7;
-}
-
-/* ==============================
-   Contact Page
-   ============================== */
+/* === Contact Section === */
 .contact-section {
   max-width: 600px;
   margin: 4rem auto;
-  padding: 0 1rem;
-}
-
-.contact-section h1 {
-  text-align: center;
-  margin-bottom: 2rem;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .contact-section form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 15px;
 }
 
 .contact-section input,
 .contact-section textarea {
-  padding: 0.75rem 1rem;
-  border: 2px solid var(--light-brown);
-  border-radius: 8px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  width: 100%;
-  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid var(--light-brown);
+  border-radius: var(--border-radius-s);
+  font-size: var(--font-size-n);
+  outline: none;
 }
 
-.contact-section textarea {
-  min-height: 150px;
-  resize: vertical;
+.contact-section input:focus,
+.contact-section textarea:focus {
+  border-color: var(--button-color);
 }
 
 .contact-section button {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border: 2px solid var(--accent);
-  border-radius: 8px;
-  background-color: var(--accent);
-  color: var(--dark-brown);
-  cursor: pointer;
-  transition: all 0.3s ease;
+  margin-top: 10px;
+  align-self: flex-start;
 }
 
-.contact-section button:hover {
-  background-color: var(--light-brown);
-  border-color: var(--light-brown);
-  color: var(--white);
-}
-
-/* ==============================
-   Footer (All Pages)
-   ============================== */
+/* === Footer === */
 footer {
   background-color: var(--dark-brown);
-  color: var(--white);
+  color: var(--button-text-color);
   padding: 1.5rem 2rem;
-  text-align: center;
   font-family: 'Poppins', sans-serif;
   font-size: 0.9rem;
-  margin-top: 3rem;
 }
 
-.footer-content {
+.footer-container {
   max-width: 900px;
   margin: 0 auto;
   display: flex;
@@ -290,25 +261,41 @@ footer {
   gap: 1rem;
 }
 
-.social-links a {
-  color: var(--white);
+.footer-right a img {
+  width: 24px;
+  height: 24px;
   margin-left: 1rem;
-  transition: color 0.3s ease;
-  display: inline-flex;
-  align-items: center;
+  transition: filter 0.3s ease;
 }
 
-.social-links a:hover {
-  color: var(--light-brown);
+.footer-right a:hover img {
+  filter: brightness(0.8) sepia(1) saturate(3) hue-rotate(100deg);
 }
 
-@media (max-width: 480px) {
-  .footer-content {
+/* === Responsive Media Queries === */
+@media (max-width: 1024px) {
+  .about-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  .about-image-wrapper img {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 640px) {
+  header nav {
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px 0;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-container {
     flex-direction: column;
     gap: 0.5rem;
-  }
-  .social-links a {
-    margin-left: 0;
-    margin-right: 1rem;
   }
 }
