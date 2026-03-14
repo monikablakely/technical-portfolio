@@ -1,5 +1,7 @@
-/* Global Styles */
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
+/* Global Styles */
 body {
   background-color: #f5efe6;
   font-family: 'Poppins', sans-serif;
@@ -8,8 +10,15 @@ body {
   padding: 0;
 }
 
-/* Navigation */
+/* Page Titles */
+h1 {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
 
+/* Navigation */
 nav {
   background-color: #ffffff;
   width: 100%;
@@ -37,7 +46,6 @@ nav a:hover {
 }
 
 /* General Links */
-
 a {
   color: #4b3621;
   text-decoration: none;
@@ -49,7 +57,6 @@ a:hover {
 }
 
 /* Buttons */
-
 button,
 .btn {
   background-color: #4b3621;
@@ -68,18 +75,43 @@ button:hover,
   opacity: 0.9;
 }
 
-/* Sections */
-
+/* Main Content */
 main {
-  padding: 40px;
+  padding: 40px 20px;
 }
 
+/* Sections */
 section {
   margin-bottom: 40px;
 }
 
-/* Footer */
+/* About Page Layout */
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
 
+.about-image img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.about-text {
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.about-text strong {
+  font-size: 1.2rem;
+}
+
+/* Footer */
 footer {
   background-color: #4b3621;
   color: #f5efe6;
@@ -94,4 +126,53 @@ footer a {
 
 footer a:hover {
   color: #9bc7bd;
+}
+
+/* Tablet & Mobile Responsive */
+@media (max-width: 768px) {
+
+  /* Navigation stacks vertically */
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* About section stacks vertically */
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 200px;
+    height: 200px;
+  }
+
+  main {
+    padding: 30px 15px;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+
+  .about-image img {
+    width: 150px;
+    height: 150px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .about-text {
+    font-size: 0.95rem;
+  }
+
+  button,
+  .btn {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+  }
 }
