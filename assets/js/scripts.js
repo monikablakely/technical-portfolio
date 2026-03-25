@@ -93,7 +93,7 @@ if (slideEls.length && prevBtn && nextBtn) {
 
 // Contact Form Logic (Contact Page)
 // Note: Replace "YOUR_PUBLIC_KEY" with your actual EmailJS public key.
-if (typeof emailjs !== "undefined") emailjs.init("i4RfceWFnJb69DCo-");
+if (typeof emailjs !== "undefined") emailjs.init("Elb0smJ6M5_VWRj4g");
 
 const contactForm = document.getElementById("contactForm");
 const formStatus = document.getElementById("formStatus");
@@ -119,7 +119,7 @@ if (contactForm) {
     // Send via EmailJS (requires valid service ID and template ID)
     // Note for the user: You will need to replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with the actual ones from your EmailJS dashboard.
     emailjs
-      .sendForm("service_cmltjbr", "template_yl33wwo", this)
+      .sendForm("service_8v0i356", "template_48kx3sq", this)
       .then(
         () => {
           formStatus.textContent = "Message sent successfully!";
